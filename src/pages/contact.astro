@@ -1,0 +1,118 @@
+---
+import Button from "../components/ui/button.astro";
+---
+
+<section
+    class="relative bg-cover bg-center h-[400px]"
+    style="background-image: url('bgcontact.png');"
+>
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+    <div
+        class="relative max-w-7xl mx-auto flex flex-col justify-center h-full px-6 lg:px-8"
+    >
+        <div>
+            <!-- <p class="text-[#FF8F00] font-semibold text-xl tracking-wider mb-2">
+                Get In Touch With us
+            </p> -->
+            <h1 class="text-[#FF8F00] text-3xl lg:text-5xl font-extrabold">
+                Get In Touch With us
+            </h1>
+        </div>
+    </div>
+</section>
+
+<!-- Description -->
+<section
+    class="relative -translate-y-1/2 z-20 bg-[#F5F5DC] max-w-7xl mx-auto py-6 px-4 lg:px-8 rounded-full border border-[#4B4B4B]"
+>
+    <div class="max-w-4xl mx-auto">
+        <p class="text-center text-gray-700 text-lg">
+            If you have questions or need assistance, reach out to our dedicated
+            support team. We're here to help!
+        </p>
+    </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4">
+    <h3 class="text-[#2E7D32] font-extrabold text-3xl lg:text-4xl mb-6">
+        Submit Your Query Here!
+    </h3>
+    <form class="p-8 rounded-lg w-full max-w-7xl mx-auto bg-white shadow-md">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            <input
+                type="text"
+                placeholder="Your Name"
+                class="border border-black rounded-full px-6 py-3 text-sm focus:outline-none"
+            />
+            <input
+                type="email"
+                placeholder="Your Email Address"
+                class="border border-black rounded-full px-6 py-3 text-sm focus:outline-none"
+            />
+            <input
+                type="text"
+                placeholder="Phone No"
+                class="border border-black rounded-full px-6 py-3 text-sm focus:outline-none"
+            />
+            <input
+                type="text"
+                placeholder="Your Address"
+                class="border border-black rounded-full px-6 py-3 text-sm focus:outline-none"
+            />
+        </div>
+        <textarea
+            placeholder="Message"
+            rows="6"
+            class="border border-black rounded-lg px-6 py-3 w-full text-sm focus:outline-none mb-6"
+        ></textarea>
+        <div class="flex justify-center items-center">
+            <Button type="submit"> Submit </Button>
+        </div>
+    </form>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 mt-12">
+    <h3 class="text-[#2E7D32] font-extrabold text-3xl lg:text-4xl mb-6">
+        Contact Us
+    </h3>
+
+    <!-- Detail part -->
+    <div
+        class="flex flex-col lg:flex-row lg:justify-between lg:gap-8 bg-white shadow-md p-8 rounded-lg"
+    >
+        <div class="mb-6 max-w-72 lg:mb-0">
+            <h5 class="text-[#558B2F] text-xl font-semibold mb-2">
+                Factory Address
+            </h5>
+            <p class="text-sm">
+                Sri Sai Nath Agri Industries Pvt. Ltd. Khasra No. 433, 434, 435
+                Village Kharbi, Taluka - District Bhandara (MS) - 441906
+            </p>
+        </div>
+
+        <div class="mb-6 lg:mb-0">
+            <h5 class="text-[#558B2F] text-xl font-semibold mb-2">Phone</h5>
+            <p class="text-sm">(0712) 2732112</p>
+            <p class="text-sm">(0712) 2765602</p>
+            <p class="text-sm">+91 9767 796 000</p>
+        </div>
+
+        <div>
+            <h5 class="text-[#558B2F] text-xl font-semibold mb-2">
+                Email Address
+            </h5>
+            <p class="text-sm">documents@greenagricorp.com</p>
+            <p class="text-sm">info@greenagricorp.com</p>
+        </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="mt-8">
+        <img
+            src="map.png"
+            alt="Map"
+            class="w-full rounded-lg shadow-md object-cover"
+        />
+    </div>
+</section>

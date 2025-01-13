@@ -1,0 +1,15 @@
+---
+const {
+    type,
+    ...buttonProps
+}: {
+    type?: "button" | "submit" | "reset";
+} = Astro.props;
+---
+
+<button
+    {...buttonProps}
+    class="poppins md:block text-[#4B4B4B] font-semibold px-4 py-2 rounded-full border border-[#FF8F00] hover:bg-[#8BC34A] hover:text-white transition duration-200 cursor-pointer whitespace-nowrap shadow my-auto"
+>
+    <slot />
+</button>
