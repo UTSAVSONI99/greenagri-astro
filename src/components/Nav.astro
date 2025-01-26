@@ -1,0 +1,45 @@
+---
+
+type Props = {
+  navItems: { href: string; label: string }[],
+ type?:"hero" | "header"
+}
+const { navItems ,type="header" } = Astro.props
+
+
+---
+
+<navbar
+  class={`w-full h-24  flex justify-center px-5 items-center  font-poppins font-semibold cursor-pointer fixed z-50 
+  ${
+    type === "hero" ? "bg-transparent text-white " : "bg-white text-[#33691E] shadow-lg bg-opacity-80 backdrop-blur border-b"
+  }`}
+>
+  <div
+    class="flex justify-between 2xl:max-w-7xl xl:max-w-5xl w-full items-center"
+  >
+    <div>
+      <a href="#">
+        <img class="h-20 p-0.5" src="/logo.webp" alt="Green Corp Logo" />
+      </a>
+    </div>
+    <ul class={`hidden md:flex space-x-6 text-lg ${type=="hero" ?"text-black drop-shadow-lg shadow-white": "text-[#33691E]"}`}>
+      {
+        navItems.map((item) => (
+          <li class="group relative">
+            <a
+              href={item.href}
+              class="before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] before:bg-[#FF8F00] before:transition-all before:duration-300 group-hover:before:w-full"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="md:hidden">
+      <button class="text-5xl" type="button"> &#8801;</button>
+    </div>
+  </div>
+</navbar>

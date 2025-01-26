@@ -1,5 +1,13 @@
 ---
 import Button from "./ui/button.astro";
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/production", label: "Production" },
+  { href: "/product", label: "Product" },
+  { href: "/contact", label: "Contact-us" },
+];
+
+import Nav from "./Nav.astro";
 ---
 
 <div
@@ -98,7 +106,9 @@ import Button from "./ui/button.astro";
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
         </svg>
     </button>
+    <Nav navItems={navItems} type="hero" />
 
+    
     <!-- slides -->
     <!-- Change min-h-[50svh] to your preferred height size -->
     <div class="relative min-h-[650px] w-full">
