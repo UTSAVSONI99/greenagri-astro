@@ -1,0 +1,27 @@
+---
+type Props = {
+    images: string[];
+    direction?: "right" | "left";
+};
+const { images, direction = "right" } = Astro.props;
+---
+
+<div
+    class="relative w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
+>
+    <!-- Card 1 -->
+    {
+        images.map((image, index) => (
+            <div
+                class="absolute"
+                style={`top: ${index * 10}px; left: ${index * 40}px; width: 150px; height: 150px;`}
+            >
+                <img
+                    src={image}
+                    alt={`Image ${index + 1}`}
+                    class="w-full h-full object-cover border rounded-lg shadow-md"
+                />
+            </div>
+        ))
+    }
+</div>
