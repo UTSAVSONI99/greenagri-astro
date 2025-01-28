@@ -7,25 +7,30 @@ import Header from "../components/Header.astro";
 import Journey from "../components/Journey.astro";
 import MainSection from "../components/MainSection.astro";
 import Product from "../components/Product.astro";
+import Wholesaler from "../components/Wholesaler.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Green Agri Corp Pvt. Limited.">
 	<div class="z-0 relative">
-		<div id="header-container" class="fixed top-0 w-full z-50 hidden transition-all ">
+		<div
+			id="header-container"
+			class="fixed top-0 w-full z-50 hidden transition-all"
+		>
 			<Header />
 		</div>
-		<script is:inline	>
-			window.addEventListener('scroll', function() {
-				const headerContainer = document.getElementById('header-container');
-				headerContainer.style.transition = 'visibility 0.5s';
+		<script is:inline>
+			window.addEventListener("scroll", function () {
+				const headerContainer =
+					document.getElementById("header-container");
+				headerContainer.style.transition = "visibility 0.5s";
 				if (window.scrollY >= 10 && headerContainer) {
-					headerContainer.classList.remove('hidden');
+					headerContainer.classList.remove("hidden");
 				} else {
 					if (headerContainer) {
-						headerContainer.classList.add('hidden');
+						headerContainer.classList.add("hidden");
 					} else {
-						alert('hello');
+						alert("hello");
 					}
 				}
 			});
@@ -40,6 +45,7 @@ import Layout from "../layouts/Layout.astro";
 		<About />
 		<Detail />
 		<!-- <Journey /> -->
+		<Wholesaler />
 		<Certification />
 		<Footer />
 	</div>
