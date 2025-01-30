@@ -1,18 +1,17 @@
 ---
-
 type Props = {
-  navItems: { href: string; label: string }[],
- type?:"hero" | "header"
-}
-const { navItems ,type="header" } = Astro.props
-
-
+  navItems: { href: string; label: string }[];
+  type?: "hero" | "header";
+};
+const { navItems, type = "header" } = Astro.props;
 ---
 
 <navbar
   class={`w-full h-24  flex justify-center px-5 items-center  font-poppins font-semibold cursor-pointer fixed z-50 
   ${
-    type === "hero" ? "bg-transparent text-white " : "bg-white text-[#33691E] shadow-lg bg-opacity-80 backdrop-blur border-b"
+    type === "hero"
+      ? "bg-transparent text-white "
+      : "bg-white text-[#33691E] shadow-lg bg-opacity-80 backdrop-blur border-b"
   }`}
 >
   <div
@@ -23,7 +22,9 @@ const { navItems ,type="header" } = Astro.props
         <img class="h-20 p-0.5" src="/logo.webp" alt="Green Corp Logo" />
       </a>
     </div>
-    <ul class={`hidden md:flex space-x-6 text-lg ${type=="hero" ?"text-black drop-shadow-lg shadow-white": "text-[#33691E]"}`}>
+    <ul
+      class={`hidden md:flex space-x-6 text-lg ${type == "hero" ? "text-black drop-shadow-lg shadow-white" : "text-[#33691E]"}`}
+    >
       {
         navItems.map((item) => (
           <li class="group relative">
