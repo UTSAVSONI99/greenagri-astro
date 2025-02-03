@@ -11,6 +11,7 @@ import Nav from "./Nav.astro";
 ---
 
 <div
+    class="relative h-[850px] w-full overflow-hidden my-auto pt-23"
     x-data="{            
     slides: [                
         {
@@ -59,7 +60,6 @@ import Nav from "./Nav.astro";
         }            
     },        
 }"
-    class="relative h-[650px] w-full overflow-hidden"
 >
     <!-- previous button -->
     <button
@@ -106,12 +106,11 @@ import Nav from "./Nav.astro";
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
         </svg>
     </button>
-    <Nav navItems={navItems} type="hero" />
-
     
     <!-- slides -->
     <!-- Change min-h-[50svh] to your preferred height size -->
-    <div class="relative min-h-[650px] w-full">
+    <!-- <Nav navItems={navItems} type="hero" /> -->
+    <div class="relative min-h-[850px] w-full">
         <template x-for="(slide, index) in slides">
             <div
                 x-cloak
@@ -126,6 +125,7 @@ import Nav from "./Nav.astro";
                     <h3
                         class="w-full lg:w-[80%] poppins-extrabold text-2xl md:text-4xl lg:text-5xl font-bold text-white "
                         x-text="slide.title"
+                        data-aos="fade-up"
                         x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"
                     >
                     </h3>
@@ -133,21 +133,20 @@ import Nav from "./Nav.astro";
                         class="lg:w-1/2 w-full poppins-medium  md:text-base lg:text-xl text-white"
                         x-text="slide.description"
                         x-bind:id="'slide' + (index + 1) + 'Description'"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
                     >
                     </p>
                     <Button
+                    data-aos="fade-up"
+                    data-aos-delay="400"
                         type="button"
                         x-cloak
                         x-show="slide.ctaUrl !== null"
                         x-text="slide.ctaText"
                         class="bg-yellow-50 text-lg font-extrabold px-12"
                     />
-                    <!-- <Button
-                        type="button"
-                        x-cloak
-                        x-show="slide.ctaUrl !== null"
-                        x-text="slide.ctaTexT"
-                    /> -->
+                    
                 </div>
 
                 <img

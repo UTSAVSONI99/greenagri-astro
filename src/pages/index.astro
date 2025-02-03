@@ -8,16 +8,15 @@ import Journey from "../components/Journey.astro";
 import MainSection from "../components/MainSection.astro";
 import Product from "../components/Product.astro";
 import Wholesaler from "../components/Wholesaler.astro";
+import ShuffleNav from "../components/ShuffleNav.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Green Agri Corp Pvt. Limited.">
 	<div class="z-0 relative">
-		<div
-			id="header-container"
-			class="fixed top-0 w-full z-50 hidden transition-all"
-		>
-			<Header />
+		<Header />
+		<!-- <ShuffleNav/> -->
+		<!-- <div id="header-container" class="fixed top-0 w-full z-50 /hidden transition-all hidden ">
 		</div>
 		<script is:inline>
 			window.addEventListener("scroll", function () {
@@ -34,7 +33,7 @@ import Layout from "../layouts/Layout.astro";
 					}
 				}
 			});
-		</script>
+		</script> -->
 		<!-- <div class="p-12 w-full"></div> -->
 		<div class="z-0 relative">
 			<MainSection />

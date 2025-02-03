@@ -2,11 +2,13 @@
 type Props = {
   navItems: { href: string; label: string }[];
   type?: "hero" | "header";
+  linkTextColor?: "black" | "white";
 };
-const { navItems, type = "header" } = Astro.props;
+const { navItems, type = "hero",linkTextColor="white" } = Astro.props;
 ---
 
 <navbar
+id="header-container"
   class={`w-full h-24  flex justify-center px-5 items-center  font-poppins font-semibold cursor-pointer fixed z-50 
   ${
     type === "hero"
@@ -23,7 +25,7 @@ const { navItems, type = "header" } = Astro.props;
       </a>
     </div>
     <ul
-      class={`hidden md:flex space-x-6 text-lg ${type == "hero" ? "text-black drop-shadow-lg shadow-white" : "text-[#33691E]"}`}
+      class={`hidden md:flex space-x-6 text-lg ${ linkTextColor=="white" ? "text-black drop-shadow-lg shadow-white" : "text-[#33691E]"}`}
     >
       {
         navItems.map((item) => (
@@ -44,3 +46,20 @@ const { navItems, type = "header" } = Astro.props;
     </div>
   </div>
 </navbar>
+
+<script is:inline>
+  window.addEventListener("scroll", function () {
+    const headerContainer =
+      document.getElementById("header-container");
+    headerContainer.style.transition = "visibility 0.5s";
+    if (window.scrollY >= 10 && headerContainer) {
+      headerContainer.classList.add("bg-white");
+    } else {
+      if (headerContainer) {
+        headerContainer.classList.remove("bg-white");
+      } else {
+        alert("hello");
+      }
+    }
+  });
+</script> 
