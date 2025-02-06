@@ -32,7 +32,7 @@ const { title = "Green Agri Coro" } = Astro.props;
 		<script src="https://unpkg.com/aos@next/dist/aos.js" is:inline></script>
 		<script is:inline>
 			// @ts-ignore
-			AOS.init();
+			AOS.init({ once: true });
 		</script>
 	</head>
 	<body>
