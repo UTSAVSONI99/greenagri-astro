@@ -7,18 +7,20 @@ import { CiMail } from "react-icons/ci";
 
 <footer class="bg-[#F5F5DC] text-[#4B4B4B]">
     <div
-        class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-[604px] py-12"
+        class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 flex flex-col md:flex-row gap-12 md:gap-24 lg:gap-[604px]"
     >
         <!-- First Section: Logo and Description -->
         <div class="flex-1 text-center md:text-left">
             <a href="#">
                 <img
-                    class="h-20  mx-auto md:mx-0"
+                    class="h-16 md:h-20 mx-auto md:mx-0"
                     src="/green.png"
                     alt="Green Corp Logo"
                 />
             </a>
-            <p class="max-w-72 mt-4 mx-auto md:mx-0">
+            <p
+                class="max-w-80 mt-4 mx-auto md:mx-0 text-sm md:text-base leading-relaxed"
+            >
                 GREEN AGRI PVT. LTD was founded in 1984 with a visionary goal to
                 transform and elevate the diverse facets of the rice industry.
             </p>
@@ -26,24 +28,24 @@ import { CiMail } from "react-icons/ci";
 
         <!-- Second Section: Contact Info -->
         <div class="flex-1 text-center md:text-left">
-            <h4 class="text-[#2E7D32] text-xl mx-8 font-semibold mb-6">
-                Contact-us
+            <h4 class="text-[#2E7D32] text-xl font-semibold mb-6">
+                Contact Us
             </h4>
-            <ul class="poppins-regular space-y-4">
+            <ul class="space-y-4">
                 <li class="flex items-center justify-center md:justify-start">
-                    <span class="mr-4 text-[#FFD54F] text-3xl">
+                    <span class="mr-3 text-[#FFD54F] text-3xl">
                         <TbCurrentLocation />
                     </span>
                     Raipur, Chhattisgarh
                 </li>
                 <li class="flex items-center justify-center md:justify-start">
-                    <span class="mr-4 text-[#FFD54F] text-3xl">
+                    <span class="mr-3 text-[#FFD54F] text-3xl">
                         <FiPhone />
                     </span>
                     +123-456-7890
                 </li>
                 <li class="flex items-center justify-center md:justify-start">
-                    <span class="mr-4 text-[#FFD54F] text-3xl">
+                    <span class="mr-3 text-[#FFD54F] text-3xl">
                         <CiMail />
                     </span>
                     green@gmail.com
@@ -52,11 +54,10 @@ import { CiMail } from "react-icons/ci";
         </div>
     </div>
 
-    <!-- _______ -->
+    <!-- Newsletter Section -->
     <div
-        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mt-12 gap-8"
+        class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 mt-12 flex flex-col md:flex-row justify-between gap-8"
     >
-        <!-- Newsletter Section -->
         <div class="flex-1 text-center md:text-left">
             <h5 class="text-[#2E7D32] text-xl font-semibold">
                 Sign Up for our Newsletter
@@ -69,25 +70,22 @@ import { CiMail } from "react-icons/ci";
 
         <!-- Input Section -->
         <div
-            class="flex flex-col sm:flex-row items-center space-x-4 justify-center md:justify-start"
+            class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4"
         >
-            <div>
-                <input
-                    id="email"
-                    type="email"
-                    placeholder="Your E-mail"
-                    class="w-64 border-b-2 border-[#4B4B4B] outline-none focus:border-[#4B4B4B] text-gray-500 text-2xl pb-1 bg-transparent appearance-none"
-                />
-            </div>
-            <span class="mt-4 sm:mt-0"><Button>Subscribe</Button></span>
+            <input
+                id="email"
+                type="email"
+                placeholder="Your E-mail"
+                class="w-full sm:w-64 border-b-2 border-[#4B4B4B] outline-none focus:border-[#4B4B4B] text-gray-500 text-lg pb-1 bg-transparent appearance-none text-center sm:text-left"
+            />
+            <Button>Subscribe</Button>
         </div>
     </div>
 
     <!-- Copyright Section -->
     <div
-        class="border-t max-w-7xl mx-auto poppins-regular border-[#084D2D] mt-8 pt-4 text-center text-[#4B4B4B]"
+        class="border-t max-w-7xl mx-auto mt-8 pt-4 pb-6 text-center text-sm md:text-base"
     >
-        Copyright &copy; {new Date().getFullYear()} Green Agri Corp Pvt. Ltd. All
-        Rights Reserved.
+        &copy; {new Date().getFullYear()} Green Agri Corp Pvt. Ltd. All Rights Reserved.
     </div>
 </footer>

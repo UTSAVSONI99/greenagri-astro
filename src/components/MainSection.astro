@@ -1,10 +1,10 @@
 ---
 import Button from "./ui/button.astro";
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/production", label: "Production" },
-  { href: "/product", label: "Product" },
-  { href: "/contact", label: "Contact-us" },
+    { href: "/", label: "Home" },
+    { href: "/production", label: "Production" },
+    { href: "/product", label: "Product" },
+    { href: "/contact", label: "Contact-us" },
 ];
 
 import Nav from "./Nav.astro";
@@ -106,7 +106,7 @@ import Nav from "./Nav.astro";
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
         </svg>
     </button>
-    
+
     <!-- slides -->
     <!-- Change min-h-[50svh] to your preferred height size -->
     <!-- <Nav navItems={navItems} type="hero" /> -->
@@ -123,14 +123,14 @@ import Nav from "./Nav.astro";
                     class="lg:px-32 lg:py-52 absolute inset-0 z-10 flex flex-col items-center justify-center gap-5 bg-gradient-to-t from-neutral-950/85 to-transparent px-16 py-52 text-center"
                 >
                     <h3
-                        class="w-full lg:w-[80%] poppins-extrabold text-2xl md:text-4xl lg:text-5xl font-bold text-white "
+                        class="w-full lg:w-[80%] poppins-extrabold text-2xl md:text-4xl lg:text-5xl font-bold text-white"
                         x-text="slide.title"
                         data-aos="fade-up"
                         x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"
                     >
                     </h3>
                     <p
-                        class="lg:w-1/2 w-full poppins-medium  md:text-base lg:text-xl text-white"
+                        class="lg:w-1/2 w-full poppins-medium md:text-base lg:text-xl text-white"
                         x-text="slide.description"
                         x-bind:id="'slide' + (index + 1) + 'Description'"
                         data-aos="fade-up"
@@ -138,15 +138,14 @@ import Nav from "./Nav.astro";
                     >
                     </p>
                     <Button
-                    data-aos="fade-up"
-                    data-aos-delay="400"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
                         type="button"
                         x-cloak
                         x-show="slide.ctaUrl !== null"
                         x-text="slide.ctaText"
                         class="bg-yellow-50 text-lg font-extrabold px-12"
                     />
-                    
                 </div>
 
                 <img
