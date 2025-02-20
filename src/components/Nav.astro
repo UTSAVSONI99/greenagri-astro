@@ -45,20 +45,121 @@ const { navItems, type = "hero", linkTextColor = "white" } = Astro.props;
       <button class="text-5xl" type="button"> &#8801;</button>
     </div>
   </div>
+
+  <script is:inline>
+    window.addEventListener("scroll", function () {
+      const headerContainer = document.getElementById("header-container");
+      headerContainer.style.transition = "visibility 0.5s";
+      if (window.scrollY >= 10 && headerContainer) {
+        headerContainer.classList.add("bg-white");
+      } else {
+        if (headerContainer) {
+          headerContainer.classList.remove("bg-white");
+        } else {
+          alert("hello");
+        }
+      }
+    });
+  </script>
 </navbar>
 
-<script is:inline>
-  window.addEventListener("scroll", function () {
-    const headerContainer = document.getElementById("header-container");
-    headerContainer.style.transition = "visibility 0.5s";
-    if (window.scrollY >= 10 && headerContainer) {
-      headerContainer.classList.add("bg-white");
-    } else {
-      if (headerContainer) {
-        headerContainer.classList.remove("bg-white");
-      } else {
-        alert("hello");
-      }
-    }
-  });
-</script>
+<!-- ---
+type Props = {
+  navItems: { href: string; label: string }[];
+  type?: "hero" | "header";
+  linkTextColor?: "black" | "white";
+};
+const { navItems, type = "hero", linkTextColor = "white" } = Astro.props;
+---
+
+<navbar
+  id="header-container"
+  class={`w-full h-24 flex justify-center px-5 items-center font-poppins font-semibold cursor-pointer fixed z-50 
+  ${
+    type === "hero"
+      ? "bg-transparent text-white "
+      : "bg-white text-[#33691E] shadow-lg bg-opacity-80 backdrop-blur border-b"
+  }`}
+>
+  <div
+    class="flex justify-between 2xl:max-w-7xl xl:max-w-5xl w-full items-center"
+  >
+    Logo
+    <div>
+      <a href="/">
+        <img class="h-20 p-0.5" src="/logo.webp" alt="Green Corp Logo" />
+      </a>
+    </div>
+
+    Desktop Navigation
+    <ul
+      class={`hidden md:flex space-x-6 text-lg ${
+        linkTextColor == "white"
+          ? "text-black drop-shadow-lg shadow-white"
+          : "text-[#33691E]"
+      }`}
+    >
+      {navItems.map((item) => (
+        <li class="group relative">
+          <a
+            href={item.href}
+            class="before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] before:bg-[#FF8F00] before:transition-all before:duration-300 group-hover:before:w-full"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    Mobile Menu Button
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-5xl" type="button">
+        &#8801;
+      </button>
+    </div>
+  </div>
+
+  Mobile Navigation (Hidden by Default)
+  <div
+    id="mobile-menu"
+    class="hidden absolute top-24 left-0 w-full bg-white shadow-lg"
+  >
+    <ul class="p-4 space-y-2">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.href} class="block p-2 text-[#33691E]">
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      Optional: Close menu when clicking outside
+      document.addEventListener("click", (event) => {
+        if (!menuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+
+      Change navbar background on scroll
+      window.addEventListener("scroll", function () {
+        const headerContainer = document.getElementById("header-container");
+        if (window.scrollY >= 10) {
+          headerContainer.classList.add("bg-white", "shadow-lg");
+        } else {
+          headerContainer.classList.remove("bg-white", "shadow-lg");
+        }
+      });
+    });
+  </script>
+</navbar> -->
