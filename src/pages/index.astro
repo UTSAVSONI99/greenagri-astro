@@ -11,13 +11,14 @@ import Wholesaler from "../components/Wholesaler.astro";
 import ShuffleNav from "../components/ShuffleNav.astro";
 import Layout from "../layouts/Layout.astro";
 import FooterPlane from "../components/FooterPlane.astro";
+import Carousel from "../components/Carousel.astro";
 ---
 
 <Layout title="Green Agri Corp Pvt. Limited.">
-	<div class="z-0 relative">
-		<Header />
-		<!-- <ShuffleNav/> -->
-		<!-- <div id="header-container" class="fixed top-0 w-full z-50 /hidden transition-all hidden ">
+  <div class="z-0 relative">
+    <Header />
+    <!-- <ShuffleNav/> -->
+    <!-- <div id="header-container" class="fixed top-0 w-full z-50 /hidden transition-all hidden ">
 		</div>
 		<script is:inline>
 			window.addEventListener("scroll", function () {
@@ -35,19 +36,20 @@ import FooterPlane from "../components/FooterPlane.astro";
 				}
 			});
 		</script> -->
-		<!-- <div class="p-12 w-full"></div> -->
-		<div class="z-0 relative">
-			<MainSection />
-		</div>
-		<div class="flex md:-translate-y-32 z-20 transition-all">
-			<Product />
-		</div>
-		<About />
-		<Detail />
-		<!-- <Journey /> -->
-		<Wholesaler />
-		<Certification />
-		<Footer />
-		<!-- <FooterPlane /> -->
-	</div>
+    <!-- <div class="p-12 w-full"></div> -->
+    <div class="z-0 relative">
+      <MainSection />
+    </div>
+    <div class="flex md:-translate-y-32 z-20 transition-all">
+      <Product />
+    </div>
+    <!-- <Carousel /> -->
+    <About />
+    <Detail />
+    <!-- <Journey /> -->
+    <Wholesaler />
+    <Certification />
+    <Footer />
+    <!-- <FooterPlane /> -->
+  </div>
 </Layout>
