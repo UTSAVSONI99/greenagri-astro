@@ -41,14 +41,37 @@ const { navItems, type = "hero", linkTextColor = "white" } = Astro.props;
       }
     </ul>
 
+    <!-- Mobile Menu Button -->
     <div class="md:hidden">
-      <button class="text-5xl" type="button"> &#8801;</button>
+      <button id="mobile-menu-button" class="text-5xl" type="button">
+        &#8801;
+      </button>
     </div>
   </div>
 
+  <!-- Mobile Navigation (Hidden by Default) -->
+
+  <div
+    id="mobile-menu"
+    class="hidden absolute top-24 left-0 w-full bg-white shadow-lg"
+  >
+    <ul class="p-4 space-y-2">
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.href} class="block p-2 text-[#33691E]">
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
   <script is:inline>
-    window.addEventListener("scroll", function () {
-      const headerContainer = document.getElementById("header-container");
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
       headerContainer.style.transition = "visibility 0.5s";
       if (window.scrollY >= 10 && headerContainer) {
         headerContainer.classList.add("bg-white");
