@@ -1,3 +1,10 @@
+# Description
+
+GreenAgri-Astro is a dynamic website we have been working on Astro, HTML, CSS, JavaScript, and various libraries with animations. 
+It serves as a showcase for rice mill products, highlighting offerings, achievements, and customer engagement. 
+Designed for an interactive user experience, the site effectively presents the brand’s products and milestones.
+
+
 # Astro Starter Kit: Basics
 
 ```sh
