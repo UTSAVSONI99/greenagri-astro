@@ -8,13 +8,21 @@ export interface Props {
 const { flip = false } = Astro.props;
 ---
 
-<section class="w-full bg-white">
+<section class="w-full">
+  <!-- <div
+    class="absolute inset-0 bg-cover bg-center opacity-20"
+    style="background-image: url('/production-4.png');"
+  >
+  </div> -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
     <div
       class={`flex flex-col ${flip ? "lg:flex-row-reverse" : "lg:flex-row"} gap-16 lg:gap-24 items-center justify-between`}
     >
       <!-- Text Content Section -->
-      <div class="w-full lg:w-1/2 space-y-8" data-aos={flip ? "fade-left" : "fade-right"}>
+      <div
+        class="w-full lg:w-1/2 space-y-8"
+        data-aos={flip ? "fade-left" : "fade-right"}
+      >
         <h3
           class="text-[#2E7D32] font-extrabold text-3xl lg:text-5xl leading-tight"
         >
@@ -28,15 +36,15 @@ const { flip = false } = Astro.props;
 
         <div class="space-y-6">
           <p class="text-base text-[#4B4B4B]">
-        We believe in keeping up with cutting-edge technology of our rice
-        plant infrastructure and processing machinery. Our total production
-        capacity of boiled paddy crushing is 1600 metric tons per day.
+            We believe in keeping up with cutting-edge technology of our rice
+            plant infrastructure and processing machinery. Our total production
+            capacity of boiled paddy crushing is 1600 metric tons per day.
           </p>
 
           <p class="text-base text-[#4B4B4B]">
-        We have developed warehouses for storing and ageing rice. For the
-        domestic market, rice ageing of 1 to 2 years is d and HMT rice. For
-        short-term storage of paddy, we use Brock Silos.
+            We have developed warehouses for storing and ageing rice. For the
+            domestic market, rice ageing of 1 to 2 years is d and HMT rice. For
+            short-term storage of paddy, we use Brock Silos.
           </p>
         </div>
       </div>

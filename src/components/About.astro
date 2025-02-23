@@ -4,15 +4,15 @@ import WhoWeAreCard from "./who-we-are-card.astro";
 import Button from "./ui/button.astro";
 ---
 
-<section class="px-4">
+<section class="px-4 py-12 relative z-0">
   <!-- First Part -->
- <WhoWeAreCard /> 
-  <WhoWeAreCard flip={true} />
- 
-  
+  <WhoWeAreCard />
+  <!-- <WhoWeAreCard flip={true} /> -->
+
   <!-- Second Part -->
+  <!--! HIDDEN -->
   <div
-    class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-[580px] items-center my-16"
+    class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-[580px] items-center my-16 hidden"
     data-aos="fade-up"
   >
     <!-- Image/Card Section -->

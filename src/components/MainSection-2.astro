@@ -164,36 +164,75 @@ const slide = {
     {
       imgSrc: "/bg-image.png",
       imgAlt:
-        "Vibrant abstract painting with swirling blue and light pink hues on a canvas.",
-      subHeading: "Welcome to Green Agri Corp Pvt Ltd",
-      title:
-        "Manufacturing and distributing premium-quality rice to aspiring nations for over 50 years.",
-      description: `With India's largest production facility, we proudly export over 300,000 tonnes of rice annually to 25 countries worldwide.`,
+        "Golden rice fields stretching to the horizon during sunset in Chhattisgarh, India",
+      subHeading: "Welcome to Green Agri Corp",
+      title: "India's Premier Rice Export Partner",
+      description:
+        "With state-of-the-art milling facilities in Chhattisgarh's rice bowl, we deliver premium Indian rice varieties to discerning customers across 25+ countries. Our commitment to quality and sustainability has made us a trusted name in global rice trade since 1973.",
       ctaUrl: "https://example.com",
-      ctaText: "Get a Quote",
+      ctaText: "Request a Quote",
     },
     {
       imgSrc: "/bg-image2.webp",
       imgAlt:
-        "Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.",
-      subHeading: "Our Mission",
-      title: "Welcome to Green Agri Corp Pvt Ltd",
-      description: "Your trusted source for agricultural products.",
+        "Modern rice processing facility with solar panels and sustainable farming practices in action",
+      subHeading: "Our Vision & Mission",
+      title: "Nourishing the World, Sustainably",
+      description:
+        "We believe in creating lasting value through sustainable agriculture. Our integrated approach combines traditional farming wisdom with modern technology, ensuring food security while protecting our environment for future generations.",
       ctaUrl: "https://example.com",
-      ctaText: "Contact-Us",
+      ctaText: "Learn More",
     },
     {
       imgSrc: "/bg-image.png",
       imgAlt:
-        "Vibrant abstract painting with swirling blue and purple hues on a canvas.",
-      subHeading: "Our People",
-      title:
-        "Manufacturing and distributing premium-quality rice to aspiring nations for over 50 years.",
-      description: `With India's largest production facility, we proudly export over 300,000 tonnes of rice annually to 25 countries worldwide.`,
+        "Diverse team of agricultural experts and operations staff working together at Green Agri Corp",
+      subHeading: "Our Team",
+      title: "Expertise Meets Excellence",
+      description:
+        "Behind every grain we export is a dedicated team of agricultural experts, quality specialists, and supply chain professionals. Our people are our greatest asset, bringing decades of combined experience in rice cultivation, processing, and international trade.",
       ctaUrl: "https://example.com",
-      ctaText: "Contact-Us",
+      ctaText: "Join Our Team",
     },
   ];
+  // const slides = [
+  //   {
+  //     imgSrc: "/bg-image.png",
+  //     imgAlt:
+  //       "Vibrant abstract painting with swirling blue and light pink hues on a canvas.",
+  //     subHeading: "Welcome to Green Agri Corp Pvt Ltd",
+  //     title: "Your Trusted Source for Premium Indian Rice",
+  //     // "Manufacturing and distributing premium-quality rice to aspiring nations for over 50 years.",
+  //     description:
+  //       "Green Agri Corp is a leading rice miller and exporter based in Chhattisgarh, India, a region renowned for its high-quality rice production.",
+  //     // `With India's largest production facility, we proudly export over 300,000 tonnes of rice annually to 25 countries worldwide.`,
+  //     ctaUrl: "https://example.com",
+  //     ctaText: "Get a Quote",
+  //   },
+  //   {
+  //     imgSrc: "/bg-image2.webp",
+  //     imgAlt:
+  //       "Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.",
+  //     subHeading: "Our Mission",
+  //     title: "Creating fair and sustainable value for future generations.",
+  //     // smallTitle:
+  //     //   "As a global agricultural merchant and processor we help provide sustenance for a growing population, working to create fair and sustainable value for the benefit of current and future generations.",
+  //     description:
+  //       "We are committed to sustainable farming practices and delivering the highest quality rice products to our customers.",
+  //     ctaUrl: "https://example.com",
+  //     ctaText: "Contact-Us",
+  //   },
+  //   {
+  //     imgSrc: "/bg-image.png",
+  //     imgAlt:
+  //       "Vibrant abstract painting with swirling blue and purple hues on a canvas.",
+  //     subHeading: "Our People",
+  //     title: "",
+  //     description: ``,
+  //     ctaUrl: "https://example.com",
+  //     ctaText: "Contact-Us",
+  //   },
+  // ];
 
   let currentSlideIndex = 0;
 
@@ -242,7 +281,12 @@ const slide = {
       if (slideSubHeading) slideSubHeading.classList.add("fade-enter-active");
       if (slideTitle) slideTitle.classList.add("fade-enter-active");
       if (slideDescription) slideDescription.classList.add("fade-enter-active");
-      if (slideButton) slideButton.classList.add("fade-enter-active");
+      if (slideButton) {
+        slideButton.classList.add("fade-enter-active");
+        slideButton.style.display = "block";
+      } else {
+        slideButton!.style.display = "none";
+      }
 
       setTimeout(() => {
         // Remove fade-in class
