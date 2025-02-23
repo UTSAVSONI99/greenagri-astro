@@ -1,4 +1,0 @@
-all:
-  hosts:
-    myserver:
-      ansible_host: 195.35.20.213

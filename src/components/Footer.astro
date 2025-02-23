@@ -7,6 +7,42 @@ import "aos/dist/aos.css";
 ---
 
 <footer class="bg-[#F5F5DC] text-[#4B4B4B]">
+
+    <div class="p-5"></div>
+    <!-- Newsletter Section -->
+    <div
+        class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 mt-12 flex flex-col md:flex-row justify-between gap-8"
+    >
+        <div
+            class="flex-1 text-center md:text-left"
+            data-aos="fade-right"
+            data-aos-delay="200"
+        >
+            <h5 class="text-[#2E7D32] text-xl font-semibold">
+                Sign Up for our Newsletter
+            </h5>
+            <p class="max-w-xl text-sm mt-4 mx-auto md:mx-0">
+                We will keep you posted with the latest news, events & new
+                developments in paddy growing and processing technologies.
+            </p>
+        </div>
+
+        <!-- Input Section -->
+        <div
+            class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4"
+            data-aos="fade-left"
+            data-aos-delay="200"
+        >
+            <input
+                id="email"
+                type="email"
+                placeholder="Your E-mail"
+                class="w-full sm:w-64 border-b-2 border-[#4B4B4B] outline-none focus:border-[#4B4B4B] text-gray-500 text-lg pb-1 bg-transparent appearance-none text-center sm:text-left"
+            />
+            <Button>Subscribe</Button>
+        </div>
+    </div>
+
     <div
         class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 flex flex-col md:flex-row gap-12 md:gap-24"
     >
@@ -54,45 +90,12 @@ import "aos/dist/aos.css";
         </div>
     </div>
 
-    <!-- Newsletter Section -->
-    <div
-        class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 mt-12 flex flex-col md:flex-row justify-between gap-8"
-    >
-        <div
-            class="flex-1 text-center md:text-left"
-            data-aos="fade-right"
-            data-aos-delay="200"
-        >
-            <h5 class="text-[#2E7D32] text-xl font-semibold">
-                Sign Up for our Newsletter
-            </h5>
-            <p class="max-w-xl text-sm mt-4 mx-auto md:mx-0">
-                We will keep you posted with the latest news, events & new
-                developments in paddy growing and processing technologies.
-            </p>
-        </div>
-
-        <!-- Input Section -->
-        <div
-            class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4"
-            data-aos="fade-left"
-            data-aos-delay="200"
-        >
-            <input
-                id="email"
-                type="email"
-                placeholder="Your E-mail"
-                class="w-full sm:w-64 border-b-2 border-[#4B4B4B] outline-none focus:border-[#4B4B4B] text-gray-500 text-lg pb-1 bg-transparent appearance-none text-center sm:text-left"
-            />
-            <Button>Subscribe</Button>
-        </div>
-    </div>
-
+    
     <!-- Copyright Section -->
     <div
         class="border-t max-w-7xl mx-auto mt-8 pt-4 pb-6 text-center text-sm md:text-base"
-        data-aos="fade-up"
-    >
+        >
+        <!-- data-aos="" -->
         &copy; {new Date().getFullYear()} Green Agri Corp Pvt. Ltd. All Rights Reserved.
     </div>
 </footer>

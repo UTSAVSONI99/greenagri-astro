@@ -31,18 +31,22 @@ const { title = "Green Agri Coro" } = Astro.props;
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js" is:inline></script>
     <script is:inline>
-      // @ts-ignore
+        // @ts-ignore
       AOS.init({ once: true });
     </script>
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <!-- header -->
     <slot />
     <!-- footer -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+		 <!-- <script src="/aos/aos.js" is:inline></script> -->
     <script>
       // @ts-ignore
-      AOS.init();
+      AOS.init({
+				once: true,
+        duration: 1000,
+			});
     </script>
 
     <script

@@ -1,0 +1,179 @@
+---
+// AboutSection.astro
+const images = ["pro-1.webp", "pro-2.jpg", "pro-3.webp", "pro-4.webp"];
+export interface Props {
+  flip?: boolean;
+}
+
+const { flip = false } = Astro.props;
+---
+
+<section class="w-full bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div
+      class={`flex flex-col ${flip ? "lg:flex-row-reverse" : "lg:flex-row"} gap-16 lg:gap-24 items-center justify-between`}
+    >
+      <!-- Text Content Section -->
+      <div class="w-full lg:w-1/2 space-y-8" data-aos={flip ? "fade-left" : "fade-right"}>
+        <h3
+          class="text-[#2E7D32] font-extrabold text-3xl lg:text-5xl leading-tight"
+        >
+          Who We Are
+        </h3>
+
+        <p class="font-semibold text-[#4B4B4B] text-lg">
+          With the largest production facility in India, we export over 300
+          thousand tonnes annually to 25 different countries.
+        </p>
+
+        <div class="space-y-6">
+          <p class="text-base text-[#4B4B4B]">
+        We believe in keeping up with cutting-edge technology of our rice
+        plant infrastructure and processing machinery. Our total production
+        capacity of boiled paddy crushing is 1600 metric tons per day.
+          </p>
+
+          <p class="text-base text-[#4B4B4B]">
+        We have developed warehouses for storing and ageing rice. For the
+        domestic market, rice ageing of 1 to 2 years is d and HMT rice. For
+        short-term storage of paddy, we use Brock Silos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image Collage Section -->
+      <div class="w-full lg:w-1/2">
+        <div
+          id="image-collage"
+          data-aos={flip ? "fade-right" : "fade-left"}
+          class="relative w-full aspect-square max-w-xl mx-auto"
+        >
+          {
+            images.map((image, index) => (
+              <div
+                class="absolute rounded-lg overflow-hidden transition-all duration-700 shadow-lg image-card border-2 "
+                style={`
+          width: 50%;
+          height: 50%;
+          top: ${index % 2 === 0 ? 0 : 50}%;
+          left: ${index < 2 ? 0 : 50}%;
+          transform: //rotate(${index * 2}deg);
+          z-index: ${index};
+          `}
+                data-index={index}
+              >
+                <img
+                  src={image}
+                  alt={`Production facility ${index + 1}`}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .image-card {
+    backface-visibility: hidden;
+    transform-origin: center center;
+  }
+
+  .image-card.active {
+    z-index: 10 !important;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(var(--rotation));
+    }
+    50% {
+      transform: translateY(-10px) rotate(var(--rotation));
+    }
+    100% {
+      transform: translateY(0) rotate(var(--rotation));
+    }
+  }
+</style>
+
+<script>
+  function initializeImageCollage() {
+    const collage = document.getElementById("image-collage") as HTMLElement;
+    const cards = document.querySelectorAll(
+      ".image-card"
+    ) as NodeListOf<HTMLElement>;
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    // Add initial floating animation with different delays
+    cards.forEach((card, index) => {
+      card.style.setProperty("--rotation", `${index * 2}deg`);
+      card.classList.add("floating");
+      card.style.animationDelay = `${index * 0.2}s`;
+    });
+
+    function rotateImages() {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      const prevIndex = currentIndex;
+      currentIndex = (currentIndex + 1) % cards.length;
+
+      // Remove active class from previous card
+      cards[prevIndex].classList.remove("active");
+
+      // Add active class to current card
+      cards[currentIndex].classList.add("active");
+
+      // Update positions
+      cards.forEach((card, index) => {
+        const offset = (index - currentIndex + cards.length) % cards.length;
+        card.style.transition = "all 2s ease-in-out";
+        // card.style.top = `${(offset === 1 || offset === 2) ? 50 : 0}%`;
+        // card.style.left = `${(offset === 2 || offset === 3) ? 50 : 0}%`;
+        // card.style.transform = `rotate(${offset * 90}deg)`;
+        card.style.zIndex = offset as any;
+      });
+
+      // Reset animation flag
+      setTimeout(() => {
+        isAnimating = false;
+      }, 10);
+    }
+
+    // Auto rotate every 3 seconds
+    setInterval(rotateImages, 3000);
+
+    // Add hover pause functionality
+    collage.addEventListener("mouseenter", () => {
+      cards.forEach((card) => {
+        card.style.animationPlayState = "paused";
+      });
+    });
+
+    collage.addEventListener("mouseleave", () => {
+      cards.forEach((card) => {
+        card.style.animationPlayState = "running";
+      });
+    });
+
+    // Add click functionality
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        if (!isAnimating) {
+          currentIndex = parseInt(card.dataset.index || "0", 10);
+          rotateImages();
+        }
+      });
+    });
+  }
+
+  // Initialize when the DOM is loaded
+  document.addEventListener("DOMContentLoaded", initializeImageCollage);
+
+  // Initialize when Astro view transitions complete
+  document.addEventListener("astro:page-load", initializeImageCollage);
+</script>

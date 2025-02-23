@@ -1,316 +1,308 @@
 ---
+import { Image } from "astro:assets";
+import Navbar from "../components/AnotherNav";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 import OtherPageLayout from "../layouts/OtherPageLayout.astro";
+import bgImage from "./../../public/bgproduction.jpg";
 ---
 
 <OtherPageLayout>
-    <section
-        class="relative bg-cover bg-center h-[400px]"
-        style="background-image: url('/bgproduction.jpg');"
+  <section class="relative bg-cover bg-center h-[400px] bg-slate-200 z-0">
+    <Image
+      class="object-cover w-full h-full absolute inset-0 bg-cover bg-center bg-no-repeat -z-10"
+      src={bgImage}
+      data-aos="fade-in"
+      alt="Production"
+    />
+    <div class="absolute inset-0 bg-black opacity-50 -z-10"></div>
+    <div class="relative max-w-7xl mx-auto flex flex-col justify-center h-full px-6 lg:px-8" >
+      <div>
+        <p
+          class="text-[#FF8F00] font-semibold text-xl tracking-wider mb-2"
+          data-aos="fade-up"
+        >
+          Production
+        </p>
+        <h1
+          class="text-white text-3xl lg:text-5xl font-extrabold"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          State of the Art Facility
+        </h1>
+        <p class="text-white text-lg" 
+          data-aos="fade-up" 
+          data-aos-delay="200"
+        >
+          With Advanced Technology & Equipment
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Description -->
+  <!-- <section class=" -translate-y-1/2 z-20transition-all">
+    <div
+      class="bg-[#F5F5DC] max-w-7xl mx-auto py-6 px-4 lg:px-8 rounded-full border border-[#4B4B4B]"
+      data-aos="fade-up"
+      data-aos-delay="300"
     >
-        <div
-            class="absolute inset-0 from-white/20 to-transparent bg-opacity-10 bg-gradient-to-b"
+      <div class="max-w-4xl mx-auto">
+        <p class="text-center text-gray-700 text-lg">
+          We have the largest production capacity in Central India in the
+          non-basmati segment. Our rice mills units are situated in Raipur and
+          Delhi.
+        </p>
+      </div>
+    </div>
+  </section> -->
+
+  <section>
+    <!-- firstpart -->
+    <div
+      class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
+    >
+      <!-- Text Content -->
+      <div class="max-w-2xl grid grid-cols-1 gap-6">
+        <h2
+          class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
+          data-aos="fade-right"
         >
-        </div>
-
-        <div
-            class="relative max-w-7xl mx-auto flex flex-col justify-center h-full px-6 lg:px-8"
+          Production Capacity
+        </h2>
+        <p
+          class="text-base text-[#4B4B4B]"
+          data-aos="fade-right"
+          data-aos-delay="300"
         >
-            <div>
-                <p
-                    class="text-[#FF8F00] font-semibold text-xl tracking-wider mb-2"
-                    data-aos="fade-up"
-                >
-                    Production
-                </p>
-                <h1
-                    class="text-white text-3xl lg:text-5xl font-extrabold"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                >
-                    State of the Art Facility
-                </h1>
-                <p
-                    class="text-white text-lg"
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                >
-                    With Advanced Technology & Equipment
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Description -->
-    <section class="relative -translate-y-1/2 z-20transition-all">
-        <div
-            class="bg-[#F5F5DC] max-w-7xl mx-auto py-6 px-4 lg:px-8 rounded-full border border-[#4B4B4B]"
-            data-aos="fade-up"
-            data-aos-delay="300"
+          We have a total production capacity of boiled paddy crushing of about
+          1600 metric tons per day.
+        </p>
+        <p
+          class="text-base text-[#4B4B4B]"
+          data-aos="fade-right"
+          data-aos-delay="400"
         >
-            <div class="max-w-4xl mx-auto">
-                <p class="text-center text-gray-700 text-lg">
-                    We have the largest production capacity in Central India in
-                    the non-basmati segment. Our rice mills units are situated
-                    in Raipur and Delhi.
-                </p>
-            </div>
-        </div>
-    </section>
+          Our rice mill units are located in close proximity to the paddy market
+          (mandi). Our Sourcing & Processing units are strategically located
+          between paddy hubs, which helps us form a seamless transportation
+          network and helps us to procure the highest quality of paddy at
+          affordable rates all-round the year.
+        </p>
+      </div>
 
-    <section>
-        <!-- firstpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
+      <!-- Image Section -->
+      <div
+        class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
+        data-aos="fade-left"
+      >
+        <img
+          src="/production-1.png"
+          alt="Image Description"
+          class="w-full h-full object-cover border shadow-md"
+        />
+      </div>
+    </div>
+
+    <!-- secondpart -->
+    <div
+      class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center my-16"
+    >
+      <!-- Image/Card Section -->
+      <div
+        class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
+        data-aos="fade-right"
+      >
+        <img
+          src="/production-2.png"
+          alt="Image Description"
+          class="w-full h-full object-cover border shadow-md"
+        />
+      </div>
+
+      <!-- Text Content -->
+      <div class="max-w-2xl grid grid-cols-1 gap-6 text-center lg:text-left">
+        <h2
+          class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
+          data-aos="fade-left"
         >
-            <!-- Text Content -->
-            <div class="max-w-2xl grid grid-cols-1 gap-6">
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-right"
-                >
-                    Production Capacity
-                </h2>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                >
-                    We have a total production capacity of boiled paddy crushing
-                    of about 1600 metric tons per day.
-                </p>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-right"
-                    data-aos-delay="400"
-                >
-                    Our rice mill units are located in close proximity to the
-                    paddy market (mandi). Our Sourcing & Processing units are
-                    strategically located between paddy hubs, which helps us
-                    form a seamless transportation network and helps us to
-                    procure the highest quality of paddy at affordable rates
-                    all-round the year.
-                </p>
-            </div>
+          Cutting Edge Production Facilities
+        </h2>
 
-            <!-- Image Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-                data-aos="fade-left"
-            >
-                <img
-                    src="/production-1.png"
-                    alt="Image Description"
-                    class="w-full h-full object-cover border shadow-md"
-                />
-            </div>
-        </div>
-
-        <!-- secondpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center my-16"
+        <p
+          class="text-base text-[#4B4B4B]"
+          data-aos="fade-left"
+          data-aos-delay="300"
         >
-            <!-- Image/Card Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-                data-aos="fade-right"
-            >
-                <img
-                    src="/production-2.png"
-                    alt="Image Description"
-                    class="w-full h-full object-cover border shadow-md"
-                />
-            </div>
+          Our machines follow industry 4.0 standards and are installed with a
+          fully automated PLC based system from Allen Bradley. There is no human
+          touch involved in handling rice grain in any of our processes. The
+          complete process of manufacturing, packaging and loading is completely
+          automated and closely guided by our quality check experts.
+        </p>
+      </div>
+    </div>
 
-            <!-- Text Content -->
-            <div
-                class="max-w-2xl grid grid-cols-1 gap-6 text-center lg:text-left"
-            >
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-left"
-                >
-                    Cutting Edge Production Facilities
-                </h2>
-
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-left"
-                    data-aos-delay="300"
-                >
-                    Our machines follow industry 4.0 standards and are installed
-                    with a fully automated PLC based system from Allen Bradley.
-                    There is no human touch involved in handling rice grain in
-                    any of our processes. The complete process of manufacturing,
-                    packaging and loading is completely automated and closely
-                    guided by our quality check experts.
-                </p>
-            </div>
-        </div>
-
-        <!-- thirdpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
+    <!-- thirdpart -->
+    <div
+      class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
+    >
+      <!-- Text Content -->
+      <div class="max-w-2xl grid grid-cols-1 gap-6">
+        <h2
+          class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
+          data-aos="fade-right"
         >
-            <!-- Text Content -->
-            <div class="max-w-2xl grid grid-cols-1 gap-6">
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-right"
-                >
-                    Processes
-                </h2>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                >
-                    90% of our overall production consists of boiled and steam
-                    rice and we have finessed these processes. Over our years of
-                    experience we have researched and developed our proprietary
-                    methods of steaming and parboiling of rice. All our dryers
-                    and cookers are custom designed by us to fit in with our one
-                    of a kind production techniques.
-                </p>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-right"
-                    data-aos-delay="400"
-                >
-                    The quality of parboiled in terms of colour, taste, odour,
-                    cooking result etc. depends on the quality of water being
-                    used during parboiled process. To maintain high quality we
-                    use RO water, and the effluents discharged during parboiling
-                    process are taken to ETP (Effluent Treatment Plant) where
-                    BOD, COD, TDS, PH is maintained and same water is reused for
-                    production.We have the biggest ETP of capacity 6.5 lakhs
-                    litres per day.
-                </p>
-            </div>
-
-            <!-- Image Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-                data-aos="fade-left"
-            >
-                <img
-                    src="/production-3.png"
-                    alt="Image Description"
-                    class="w-full h-full object-cover border shadow-md"
-                />
-            </div>
-        </div>
-
-        <!-- fourthpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
+          Processes
+        </h2>
+        <p
+          class="text-base text-[#4B4B4B]"
+          data-aos="fade-right"
+          data-aos-delay="300"
         >
-            <!-- Image/Card Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-                data-aos="fade-right"
-            >
-                <img
-                    src="/production-4.png"
-                    alt="Image Description"
-                    class="w-full h-full object-cover border shadow-md"
-                />
-            </div>
-
-            <!-- Text Content -->
-            <div
-                class="max-w-2xl grid grid-cols-1 gap-6 text-center lg:text-left"
-            >
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-left"
-                >
-                    Storage
-                </h2>
-
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-left"
-                    data-aos-delay="300"
-                >
-                    We have developed Warehouses for storing and raging of rice.
-                    For the domestic market rice ageing of 1year to 2 year is
-                    done for - JSR and HMT rice. For short term storage of paddy
-                    we use Brock Silos.
-                </p>
-            </div>
-        </div>
-
-        <!-- fifthpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
+          90% of our overall production consists of boiled and steam rice and we
+          have finessed these processes. Over our years of experience we have
+          researched and developed our proprietary methods of steaming and
+          parboiling of rice. All our dryers and cookers are custom designed by
+          us to fit in with our one of a kind production techniques.
+        </p>
+        <p
+          class="text-base text-[#4B4B4B]"
+          data-aos="fade-right"
+          data-aos-delay="400"
         >
-            <!-- Text Content -->
-            <div class="max-w-2xl grid grid-cols-1 gap-6">
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-right"
-                >
-                    Laboratory/Quality Control
-                </h2>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                >
-                    We have In house laboratory where quality check of every
-                    batch of rice is done at all stages of rice processing.
-                </p>
-            </div>
+          The quality of parboiled in terms of colour, taste, odour, cooking
+          result etc. depends on the quality of water being used during
+          parboiled process. To maintain high quality we use RO water, and the
+          effluents discharged during parboiling process are taken to ETP
+          (Effluent Treatment Plant) where BOD, COD, TDS, PH is maintained and
+          same water is reused for production.We have the biggest ETP of
+          capacity 6.5 lakhs litres per day.
+        </p>
+      </div>
 
-            <!-- Image Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-                data-aos="fade-left"
-            >
-                <img
-                    src="/production-5.png"
-                    alt="Image Description"
-                    class="w-full h-full object-cover border shadow-md"
-                />
-            </div>
-        </div>
+      <!-- Image Section -->
+      <div
+        class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
+        data-aos="fade-left"
+      >
+        <img
+          src="/production-3.png"
+          alt="Image Description"
+          class="w-full h-full object-cover border shadow-md"
+        />
+      </div>
+    </div>
 
-        <!-- sixthpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center my-16"
+    <!-- fourthpart -->
+    <div
+      class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
+    >
+      <!-- Image/Card Section -->
+      <div
+        class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
+        data-aos="fade-right"
+      >
+        <img
+          src="/production-4.png"
+          alt="Image Description"
+          class="w-full h-full object-cover border shadow-md"
+        />
+      </div>
+
+      <!-- Text Content -->
+      <div class="max-w-2xl grid grid-cols-1 gap-6 text-center lg:text-left">
+        <h2
+          class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
+          data-aos="fade-left"
         >
-            <!-- Image/Card Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-                data-aos="fade-right"
-            >
-                <img
-                    src="/production-6.webp"
-                    alt="Image Description"
-                    class="w-full h-full object-cover border shadow-md"
-                />
-            </div>
+          Storage
+        </h2>
 
-            <!-- Text Content -->
-            <div
-                class="max-w-2xl grid grid-cols-1 gap-6 text-center lg:text-left"
-            >
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-left"
-                >
-                    Renewable Energy
-                </h2>
+        <p
+          class="text-base text-[#4B4B4B]"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          We have developed Warehouses for storing and raging of rice. For the
+          domestic market rice ageing of 1year to 2 year is done for - JSR and
+          HMT rice. For short term storage of paddy we use Brock Silos.
+        </p>
+      </div>
+    </div>
 
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-left"
-                    data-aos-delay="300"
-                >
-                    We take pride in powering our production with clean,
-                    sustainable renewable energy, ensuring a greener future.
-                </p>
-            </div>
-        </div>
-    </section>
+    <!-- fifthpart -->
+    <div
+      class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
+    >
+      <!-- Text Content -->
+      <div class="max-w-2xl grid grid-cols-1 gap-6">
+        <h2
+          class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
+          data-aos="fade-right"
+        >
+          Laboratory/Quality Control
+        </h2>
+        <p
+          class="text-base text-[#4B4B4B]"
+          data-aos="fade-right"
+          data-aos-delay="300"
+        >
+          We have In house laboratory where quality check of every batch of rice
+          is done at all stages of rice processing.
+        </p>
+      </div>
+
+      <!-- Image Section -->
+      <div
+        class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
+        data-aos="fade-left"
+      >
+        <img
+          src="/production-5.png"
+          alt="Image Description"
+          class="w-full h-full object-cover border shadow-md"
+        />
+      </div>
+    </div>
+
+    <!-- sixthpart -->
+    <div
+      class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center my-16"
+    >
+      <!-- Image/Card Section -->
+      <div
+        class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
+        data-aos="fade-right"
+      >
+        <img
+          src="/production-6.webp"
+          alt="Image Description"
+          class="w-full h-full object-cover border shadow-md"
+        />
+      </div>
+
+      <!-- Text Content -->
+      <div class="max-w-2xl grid grid-cols-1 gap-6 text-center lg:text-left">
+        <h2
+          class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
+          data-aos="fade-left"
+        >
+          Renewable Energy
+        </h2>
+
+        <p
+          class="text-base text-[#4B4B4B]"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          We take pride in powering our production with clean, sustainable
+          renewable energy, ensuring a greener future.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
 </OtherPageLayout>

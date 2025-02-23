@@ -2,9 +2,11 @@
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import Layout from "./Layout.astro"
+import Navbar from "../components/AnotherNav"
 ---
 <Layout>
-  <Header/>
+  <!-- <Header/> -->
+   <Navbar animate={false} client:load />
     <slot/>
   <Footer/>
 </Layout>

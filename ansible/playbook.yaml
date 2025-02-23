@@ -1,7 +1,0 @@
----
-- name: Simple Echo Playbook
-  hosts: localhost
-  become: yes
-  tasks:
-    - name: Echo a message
-      command: echo "Hello, Ansible!"
