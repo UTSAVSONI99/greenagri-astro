@@ -40,6 +40,7 @@ const Navbar = ({animate=false}:{animate?:boolean}) => {
             <a
               // tabIndex={-1}
               key={link.name}
+              data-astro-prefetch
               href={link.href}
               className="text-gray-300 pt-12 hover:bg-slate-300/40 h-full hover:text-white transition duration-300 ease-in-out
                 active:bg-slate-400/40 active:text-white
