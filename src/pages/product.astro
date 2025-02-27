@@ -1,211 +1,112 @@
 ---
-import {Image} from "astro:assets"
+import { Image } from "astro:assets";
 import OtherPageLayout from "../layouts/OtherPageLayout.astro";
 import Navbar from "../components/AnotherNav";
 ---
 
 <OtherPageLayout>
-    <!-- Hero Section -->
-    <section
-        class="relative bg-cover bg-center h-[400px]"
-        style="background-image: url('/bgproduct.avif');"
-    >
-    
+  <!-- Hero Section -->
+  <section
+    class="relative bg-cover bg-center h-[450px] md:h-[500px] lg:h-[600px] flex items-center"
+    style="background-image: url('/bgproduct.avif');"
+  >
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
-        <div
-            class="relative max-w-7xl mx-auto flex flex-col justify-center h-full px-6 lg:px-8"
+    <div
+      class="relative max-w-7xl mx-auto flex flex-col justify-center h-full px-6 sm:px-10 lg:px-12"
+    >
+      <div data-aos-delay="300">
+        <p
+          class="text-[#FF8F00] font-semibold text-lg sm:text-xl tracking-wide mb-3"
+          data-aos="fade-up"
         >
-            <div data-aos-delay="300">
-                <p
-                    class="text-[#FF8F00] font-semibold text-xl tracking-wider mb-2"
-                    data-aos="fade-up"
-                >
-                    Product
-                </p>
-                <h1
-                    class="text-white text-3xl lg:text-5xl font-extrabold"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                >
-                    Over Five Varieties Of Paddy and Rice Product
-                </h1>
-            </div>
-        </div>
-    </section>
-
-    <!-- Description -->
-    <section class="relative -translate-y-1/2 z-20">
-        <div
-            class="bg-[#F5F5DC] max-w-7xl mx-auto py-6 px-4 lg:px-8 rounded-full border border-[#4B4B4B]"
-            data-aos="fade-up"
-            data-aos-delay="300"
+          Our Premium Products
+        </p>
+        <h1
+          class="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
-            <div class="max-w-4xl mx-auto">
-                <p class="text-center text-gray-700 text-lg">
-                    Our commitment to excellence begins in the field, mastered
-                    in our mill, and reflected in the quality of each rice
-                    product we produce.
-                </p>
-            </div>
-        </div>
-    </section>
+          Explore Our High-Quality Rice Varieties
+        </h1>
+      </div>
+    </div>
+  </section>
 
-    <!-- Product Sections (Each Product) -->
-    <section>
-        <!-- firstpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
-        >
-            <!-- Text Content -->
-            <div class="max-w-2xl grid grid-cols-1 gap-6">
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-right"
-                >
-                    Boiled IR
-                </h2>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                >
-                    We specialize in providing premium-quality Boiled IR Rice,
-                    meticulously processed to meet global industry standards.
-                </p>
-            </div>
+  <!-- Description -->
+  <section class="relative -translate-y-1/2 z-20 px-4 sm:px-6">
+    <div
+      class="bg-[#F5F5DC] max-w-6xl mx-auto py-8 px-6 sm:px-10 lg:px-12 rounded-xl border border-[#4B4B4B] shadow-lg"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <p class="text-center text-gray-700 text-base sm:text-lg leading-relaxed">
+        Our commitment to excellence starts from the fields and is perfected in our mills, ensuring superior quality in every grain.
+      </p>
+    </div>
+  </section>
 
-            <!-- Image Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-            >
-                <Image
-                    width="200"
-                    height={200}
-                    src="/product-1.png"
-                    alt="Boiled IR Rice"
-                    class="w-full h-full object-cover border shadow-md"
-                    data-aos="fade-left"
-                    data-aos-delay="600"
-                />
-            </div>
-        </div>
-
-        <!-- secondpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center my-16"
-        >
-            <!-- Image Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-            >
-                <img
-                    src="/product-2.png"
-                    alt="Boiled Swarna Rice"
-                    class="w-full h-full object-cover border shadow-md"
-                    data-aos="fade-right"
-                    data-aos-delay="600"
-                />
-            </div>
-
-            <!-- Text Content -->
-            <div
-                class="max-w-2xl grid grid-cols-1 gap-6 text-center lg:text-left"
-            >
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-left"
-                >
-                    Boiled Swarna Rice
-                </h2>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-left"
-                    data-aos-delay="300"
-                >
-                    We process Boiled Swarna Rice with precision, ensuring it
-                    meets the highest standards for the global market.
-                </p>
-            </div>
+  <!-- Product Sections -->
+  <section class="space-y-16 sm:space-y-20 lg:space-y-24 py-10 sm:py-14 lg:py-20 px-4 sm:px-6">
+    <!-- Product Template -->
+    {[
+      {
+        title: "Boiled IR Rice",
+        description: "We specialize in providing premium-quality Boiled IR Rice, meticulously processed to meet global industry standards.",
+        image: "/product-1.png",
+        aosText: "fade-right",
+        aosImage: "fade-left",
+      },
+      {
+        title: "Boiled Swarna Rice",
+        description: "We process Boiled Swarna Rice with precision, ensuring it meets the highest standards for the global market.",
+        image: "/product-2.png",
+        aosText: "fade-left",
+        aosImage: "fade-right",
+      },
+      {
+        title: "White Broken Rice",
+        description: "Every batch of White Broken Rice meets rigorous quality standards to ensure the best taste and nutrition.",
+        image: "/product-3.png",
+        aosText: "fade-right",
+        aosImage: "fade-left",
+      },
+      {
+        title: "White Rice",
+        description: "We ensure that every batch of White Rice meets the highest quality standards for a superior culinary experience.",
+        image: "/product-4.png",
+        aosText: "fade-left",
+        aosImage: "fade-right",
+      },
+    ].map((product, index) => (
+      <div
+        key={index}
+        class={`flex flex-col-reverse lg:flex-row ${
+          index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+        } max-w-7xl mx-auto gap-8 lg:gap-16 items-center`}
+      >
+        <!-- Text Content -->
+        <div class="max-w-2xl space-y-4" data-aos={product.aosText}>
+          <h2 class="text-[#558B2F] text-xl sm:text-2xl lg:text-3xl font-bold">
+            {product.title}
+          </h2>
+          <p class="text-base sm:text-lg text-[#4B4B4B] leading-relaxed">
+            {product.description}
+          </p>
         </div>
 
-        <!-- thirdpart -->
+        <!-- Image Section -->
         <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center"
-            data-aos="fade-up"
-            data-aos-duration="1200"
+          class="w-full sm:w-[350px] md:w-[400px] lg:w-[450px] h-[350px] md:h-[400px] lg:h-[450px] flex justify-center"
+          data-aos={product.aosImage}
         >
-            <!-- Text Content -->
-            <div class="max-w-2xl grid grid-cols-1 gap-6">
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-right"
-                >
-                    White Broken Rice
-                </h2>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                >
-                    We ensure that every batch of White Broken Rice meets
-                    rigorous quality standards.
-                </p>
-            </div>
-
-            <!-- Image Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-            >
-                <img
-                    src="/product-3.png"
-                    alt="White Broken Rice"
-                    class="w-full h-full object-cover border shadow-md"
-                    data-aos="fade-left"
-                    data-aos-delay="600"
-                />
-            </div>
+          <img
+            src={product.image}
+            alt={product.title}
+            class="w-full h-full object-cover border shadow-md rounded-lg"
+          />
         </div>
-
-        <!-- fourthpart -->
-        <div
-            class="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12 lg:gap-52 items-center my-16"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-        >
-            <!-- Image Section -->
-            <div
-                class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] h-[400px] mt-8 lg:mt-0"
-            >
-                <img
-                    src="/product-4.png"
-                    alt="White Rice"
-                    class="w-full h-full object-cover border shadow-md"
-                    data-aos="fade-right"
-                    data-aos-delay="600"
-                    data-aos    
-                />
-            </div>
-
-            <!-- Text Content -->
-            <div
-                class="max-w-2xl grid grid-cols-1 gap-6 text-center lg:text-left"
-            >
-                <h2
-                    class="text-[#558B2F] text-lg md:text-xl lg:text-3xl font-semibold"
-                    data-aos="fade-left"
-                >
-                    White Rice
-                </h2>
-                <p
-                    class="text-base text-[#4B4B4B]"
-                    data-aos="fade-left"
-                    data-aos-delay="600"
-                >
-                    We ensure that every batch of White Rice meets rigorous
-                    quality standards.
-                </p>
-            </div>
-        </div>
-    </section>
+      </div>
+    ))}
+  </section>
 </OtherPageLayout>
