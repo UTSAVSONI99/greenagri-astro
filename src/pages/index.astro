@@ -14,6 +14,7 @@ import Layout from "../layouts/Layout.astro";
 import FooterPlane from "../components/FooterPlane.astro";
 import Carousel from "../components/Carousel.astro";
 import Navbar from "../components/AnotherNav";
+import { Productes } from "@/components/Productes";
 ---
 
 <Layout title="Green Agri Corp Pvt. Limited.">
@@ -22,7 +23,9 @@ import Navbar from "../components/AnotherNav";
     <MainSection />
     <About />
     <!-- <Journey /> -->
-    <Product />
+    <!-- <Product /> -->
+    <Productes client:load />
+
     <div class="p-5"></div>
     <Detail />
     <Wholesaler />
