@@ -14,22 +14,19 @@ import Layout from "../layouts/Layout.astro";
 import FooterPlane from "../components/FooterPlane.astro";
 import Carousel from "../components/Carousel.astro";
 import Navbar from "../components/AnotherNav";
-import { Productes } from "@/components/Productes";
+import { Products } from "@/components/Products";
 ---
 
 <Layout title="Green Agri Corp Pvt. Limited.">
-  <div class="right-0 left-0">
-    <Navbar animate={true} client:load />
-    <MainSection />
-    <About />
-    <!-- <Journey /> -->
-    <!-- <Product /> -->
-    <Productes client:load />
-
-    <div class="p-5"></div>
-    <Detail />
-    <Wholesaler />
-    <Certification />
-    <Footer />
-  </div>
+  <Navbar animate={true} client:load />
+  <MainSection />
+  <About />
+  <Products client:load />
+  <!-- <Journey /> -->
+  <!-- <Product /> -->
+  <div class="p-5"></div>
+  <Detail />
+  <Wholesaler />
+  <Certification />
+  <Footer />
 </Layout>
