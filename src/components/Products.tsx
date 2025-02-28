@@ -101,7 +101,7 @@ export function Products() {
 
       <div className="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
         <a
-          href="/products"
+          href="/product"
           className="inline-block px-6 py-3 bg-green-600 text-white rounded-md text-lg font-medium transition-all hover:bg-green-700"
         >
           Explore More
