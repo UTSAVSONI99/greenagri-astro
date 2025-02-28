@@ -100,39 +100,41 @@ const products = [
   <!-- Product Sections -->
   <section class="relative z-0 px-4 sm:px-6 flex flex-col lg:flex-row ">
     <!-- Left Sidebar Menu -->
-    <div class="w-full lg:w-1/5 lg:sticky top-28 self-start my-14">
-      <div class="bg-white shadow-lg rounded-lg p-4 border border-gray-300">
-        <h3 class="text-lg font-semibold text-[#558B2F] mb-4">Product Categories</h3>
-        <ul class="space-y-3">
+    <div class=" w-full sm:max-w-5xl mx-auto lg:w-1/6 lg:sticky top-28 self-start my-14 ">
+      <div class="bg-white shadow-lg  rounded-xl p-4 border border-gray-300">
+        <h3 class="text-xl font-semibold text-[#558B2F] mb-4 border-b pb-2">Product Categories</h3>
+        <ul class="space-y-2">
           {categories.map((category, catIndex) => (
             <li class="group">
               <button class="text-gray-800 font-bold flex items-center justify-between w-full hover:text-[#558B2F]">
                 {category.name}
                 <span class="transition-transform group-hover:rotate-90">→</span>
               </button>
-              <ul class="hidden group-hover:block ml-3 mt-2 space-y-1">
-                {category.products.map((product, prodIndex) => (
-                  <li>
-                    <a href={`#product-${catIndex}-${prodIndex}`} class="block text-gray-600 hover:text-[#558B2F] hover:underline text-sm">
-                      {product}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <ul class="hidden group-hover:block ml-3 mt-2 space-y-2 border-l-2 border-gray-300 pl-3">
+              {category.products.map((product, prodIndex) => (
+                <li>
+                  <a href={`#product-${catIndex}-${prodIndex}`} class="block text-gray-600 hover:text-[#558B2F] hover:underline text-sm transition-colors duration-200">
+                    {product}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
             </li>
           ))}
         </ul>
       </div>
     </div>
+    
 
     <!-- Product List -->
-    <div class="w-full lg:w-3/4 space-y-16 sm:space-y-20 lg:space-y-24 py-0 sm:py-4 lg:py-8">
-      <h3 class="text-[#558B2F] text-2xl sm:text-xl lg:text-4xl font-semibold text-center">Our Products</h3>
+    <div class="w-full lg:w-3/4 space-y-16 sm:space-y-20 lg:space-y-24 py-0 sm:py-4 lg:py-16">
+      <!-- <h3 class="text-[#558B2F] text-2xl sm:text-xl lg:text-4xl font-semibold text-center">Our Products</h3> -->
 
       {products.map((product, index) => (
         <div
           id={`product-${index}`}
-          key={index}
+          
           class={`flex ${
             index % 2 === 0 ? "flex-row" : "flex-row-reverse"
           } items-center max-w-3xl mx-auto gap-8 lg:gap-16 border-b pb-3 scroll-mt-28`}
