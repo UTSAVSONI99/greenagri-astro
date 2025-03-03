@@ -41,6 +41,7 @@ const products = [
   //   },
 ];
 import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "./ui/button";
 export function Products() {
   return (
     <div className="space-y-8 py-12">
@@ -99,14 +100,20 @@ export function Products() {
         <CarouselNext />
       </Carousel>
 
-      <div className="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
+     
+      <div className="mx-auto w-full flex justify-center">  
+
         <a
           href="/product"
-          className="inline-block px-6 py-3 bg-green-600 text-white rounded-md text-lg font-medium transition-all hover:bg-green-700"
-        >
+           data-aos="fade-up" data-aos-delay="200"
+          >
+      <Button
+      variant={'exploreMore'}
+      >
           Explore More
+      </Button> 
         </a>
-      </div>
+        </div>
     </div>
   );
 }

@@ -1,103 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import OtherPageLayout from "../layouts/OtherPageLayout.astro";
-import    {
-  Card,
-  CardContent
-  ,CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '../components/ui/card'
-
-const categories = [
-  {
-    name: "Boiled Rice",
-    products: ["Boiled IR Rice", "Boiled Swarna Rice"],
-  },
-  {
-    name: "White Rice",
-    products: ["White Broken Rice", "White Rice"],
-  },
-];
-
-<<<<<<< HEAD
-    <div
-      class="relative max-w-7xl mx-auto flex flex-col justify-center h-full px-6 sm:px-10 lg:px-12"
-    >
-      <div data-aos-delay="300">
-        <p
-          class="text-[#FF8F00] font-semibold text-lg sm:text-xl tracking-wide mb-3"
-          data-aos="fade-up"
-        >
-          Our Premium Products
-        </p>
-        <h1
-          class="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          Explore Our High-Quality Rice Varieties
-        </h1>
-      </div>
-    </div>
-  </section>
-
-  <!-- Description -->
-  <section class="relative -translate-y-1/2 z-20 px-4 sm:px-6">
-    <div
-      class="bg-[#F5F5DC] max-w-6xl mx-auto py-8 px-6 sm:px-10 lg:px-12 rounded-full border border-[#4B4B4B] shadow-lg"
-      data-aos="fade-up"
-      data-aos-delay="300"
-    >
-      <p class="text-center text-gray-700 text-base sm:text-lg leading-relaxed">
-        Our commitment to excellence starts from the fields and is perfected in our mills, ensuring superior quality in every grain.
-      </p>
-    </div>
-  </section>
-
-  <!-- Product Sections -->
-  <section class="space-y-16 sm:space-y-20 lg:space-y-24 py-10 sm:py-14 lg:py-20 px-4 sm:px-6">
-    <!-- Product Template -->
-    {[
-=======
-const products = [
->>>>>>> fb3a132f8b611dc325144a4dbbc284df859f0345
-      {
-        title: "Boiled IR Rice",
-        description: "We specialize in providing premium-quality Boiled IR Rice, meticulously processed to meet global industry standards.",
-        image: "/product-1.png",
-        aosText: "fade-right",
-        aosImage: "fade-left",
-      },
-      {
-        title: "Boiled Swarna Rice",
-        description: "We process Boiled Swarna Rice with precision, ensuring it meets the highest standards for the global market.",
-        image: "/product-2.png",
-        aosText: "fade-left",
-        aosImage: "fade-right",
-      },
-      {
-        title: "White Broken Rice",
-        description: "Every batch of White Broken Rice meets rigorous quality standards to ensure the best taste and nutrition.",
-        image: "/product-3.png",
-        aosText: "fade-right",
-        aosImage: "fade-left",
-      },
-      {
-        title: "White Rice",
-        description: "We ensure that every batch of White Rice meets the highest quality standards for a superior culinary experience.",
-        image: "/product-4.png",
-        aosText: "fade-left",
-        aosImage: "fade-right",
-      },
-    ]
+import ProductPage from "@/components/product";
+import OtherPageLayout from "@/layouts/OtherPageLayout.astro";
 ---
 
 <OtherPageLayout>
   <!-- Hero Section -->
   <section
-    class="relative bg-cover bg-center h-[400px]  flex items-center"
+    class="relative bg-cover bg-center h-[400px] flex items-center"
     style="background-image: url('/bgproduct.avif');"
   >
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -122,82 +31,28 @@ const products = [
       </div>
     </div>
   </section>
-
   <!-- Description -->
   <section class="relative -translate-y-1/2 z-20 px-4 sm:px-6">
-      <!-- Right Navigation Section -->
-   
+    <!-- Right Navigation Section -->
+
     <div
       class="bg-[#F5F5DC] max-w-6xl mx-auto py-8 px-6 sm:px-10 lg:px-12 rounded-full border border-[#4B4B4B] shadow-lg"
       data-aos="fade-up"
       data-aos-delay="300"
     >
-      <p class="text-center text-gray-700 text-xs sm:text-base md:text-lg leading-relaxed">
-        Our commitment to excellence starts from the fields and is perfected in our mills, ensuring superior quality in every grain.
+      <p
+        class="text-center text-gray-700 text-xs sm:text-base md:text-lg leading-relaxed"
+      >
+        Our commitment to excellence starts from the fields and is perfected in
+        our mills, ensuring superior quality in every grain.
       </p>
     </div>
   </section>
 
-  <!-- Product Sections -->
-  <section class="relative z-0 px-4 sm:px-6 flex flex-col lg:flex-row ">
-    <!-- Left Sidebar Menu -->
-    <div class=" w-full sm:max-w-5xl mx-auto lg:w-1/6 lg:sticky top-28 self-start my-14 ">
-      <div class="bg-white shadow-lg  rounded-xl p-4 border border-gray-300">
-        <h3 class="text-xl font-semibold text-[#558B2F] mb-4 border-b pb-2">Product Categories</h3>
-        <ul class="space-y-2">
-          {categories.map((category, catIndex) => (
-            <li class="group">
-              <button class="text-gray-800 font-bold flex items-center justify-between w-full hover:text-[#558B2F]">
-                {category.name}
-                <span class="transition-transform group-hover:rotate-90">→</span>
-              </button>
-              <ul class="hidden group-hover:block ml-3 mt-2 space-y-2 border-l-2 border-gray-300 pl-3">
-              {category.products.map((product, prodIndex) => (
-                <li>
-                  <a href={`#product-${catIndex}-${prodIndex}`} class="block text-gray-600 hover:text-[#558B2F] hover:underline text-sm transition-colors duration-200">
-                    {product}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-    
-
-    <!-- Product List -->
-    <div class="w-full lg:w-3/4 space-y-16 sm:space-y-20 lg:space-y-24 py-0 sm:py-4 lg:py-16">
-      <!-- <h3 class="text-[#558B2F] text-2xl sm:text-xl lg:text-4xl font-semibold text-center">Our Products</h3> -->
-
-      {products.map((product, index) => (
-        <div
-          id={`product-${index}`}
-          
-          class={`flex ${
-            index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-          } items-center max-w-3xl mx-auto gap-8 lg:gap-16 border-b pb-3 scroll-mt-28`}
-        >
-          <!-- Product Image -->
-          <img
-            src={product.image}
-            alt={product.title}
-            class="w-20 h-20 sm:w-32 sm:h-32 lg:w-42 lg:h-42 object-cover border shadow-md rounded-lg mx-auto"
-          />
-
-          <!-- Product Description -->
-          <div class="max-w-2xl space-y-4">
-            <h2 class="text-[#558B2F] text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold">
-              {product.title}
-            </h2>
-            <p class="text-sm sm:text-base lg:text-lg xl:text-xl text-[#4B4B4B] leading-relaxed">
-              {product.description}
-            </p>
-          </div>
-        </div>
-      ))}
+  <div class="p-4"></div>
+  <section class="py-12">
+    <div class="border rounded-lg max-w-7xl mx-auto">
+      <ProductPage client:load />
     </div>
   </section>
 </OtherPageLayout>
