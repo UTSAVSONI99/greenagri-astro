@@ -1,12 +1,10 @@
-
 services:
   app:
-    image: node:latest
+    image: node:23
     working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
-    command: sh -c "npm install && npm start"
     ports:
-      - "3000:3000"
-    environment:
-      NODE_ENV: development
+      - ${PORT:-8080}:${PORT:-8080}
+    volumes:
+      - ./dist:/usr/src/app
+    command: npx http-server -p ${PORT:-8080}
+

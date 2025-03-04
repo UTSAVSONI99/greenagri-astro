@@ -1,36 +1,34 @@
 ---
+import "@/styles/index.css";
 import About from "../components/About.astro";
 import Certification from "../components/Certification.astro";
 import Detail from "../components/Detail.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Journey from "../components/Journey.astro";
-import MainSection from "../components/MainSection.astro";
+import MainSection from "../components/MainSection-2.astro";
 import Product from "../components/Product.astro";
 import Wholesaler from "../components/Wholesaler.astro";
 import ShuffleNav from "../components/ShuffleNav.astro";
 import Layout from "../layouts/Layout.astro";
 import FooterPlane from "../components/FooterPlane.astro";
 import Carousel from "../components/Carousel.astro";
+import Navbar from "../components/AnotherNav";
+import { Products } from "@/components/Products";
+import Produtes from "@/components/Produtes";
 ---
 
 <Layout title="Green Agri Corp Pvt. Limited.">
-  <div class="z-0 relative">
-    <Header />
-    <!-- <div class="p-12 w-full"></div> -->
-    <div class="z-0 relative">
-      <MainSection />
-    </div>
-    <div class="flex md:-translate-y-32 z-20 transition-all">
-      <Product />
-    </div>
-    <!-- <Carousel /> -->
-    <About />
-    <Detail />
-    <!-- <Journey /> -->
-    <Wholesaler />
-    <Certification />
-    <Footer />
-    <!-- <FooterPlane /> -->
-  </div>
+  <Navbar animate={true} client:load />
+  <MainSection />
+  <About />
+  <Products client:load />
+  <!-- <Produtes client:load /> -->
+  <!-- <Journey /> -->
+  <!-- <Product /> -->
+  <div class="p-5"></div>
+  <Detail />
+  <Wholesaler />
+  <Certification />
+  <Footer />
 </Layout>

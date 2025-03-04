@@ -10,16 +10,22 @@ const { navItems, type = "hero", linkTextColor = "white" } = Astro.props;
 <navbar
   id="header-container"
   class={`w-full h-24  flex justify-center px-5 items-center  font-poppins font-semibold cursor-pointer fixed z-50 
+  transition-all
+  duration-300
+
   ${
     type === "hero"
       ? "bg-transparent text-white "
       : "bg-white text-[#33691E] shadow-lg bg-opacity-80 backdrop-blur border-b"
   }`}
 >
+
+
   <div
     class="flex justify-between 2xl:max-w-7xl xl:max-w-5xl w-full items-center"
   >
-    <div>
+    <div class="bg-white my-auto p-5" id="logo">
+
       <a href="/">
         <img class="h-20 p-0.5" src="/logo.webp" alt="Green Corp Logo" />
       </a>
@@ -29,10 +35,10 @@ const { navItems, type = "hero", linkTextColor = "white" } = Astro.props;
     >
       {
         navItems.map((item) => (
-          <li class="group relative">
+          <li class="group relative ">
             <a
               href={item.href}
-              class="before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] before:bg-[#FF8F00] before:transition-all before:duration-300 group-hover:before:w-full"
+              class="before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] before:bg-[#FF8F00] before:transition-all before:duration-300 group-hover:before:w-full text-emerald-600 active:bg-slate-400/10 "
             >
               {item.label}
             </a>
@@ -69,16 +75,19 @@ const { navItems, type = "hero", linkTextColor = "white" } = Astro.props;
   </div>
 
   <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
+    window.addEventListener("scroll", function () {
+      const headerContainer = document.getElementById("header-container");
+      const logo = document.getElementById("logo");
       headerContainer.style.transition = "visibility 0.5s";
       if (window.scrollY >= 10 && headerContainer) {
-        headerContainer.classList.add("bg-white");
-      } else {
+        headerContainer.classList.add("bg-white", "shadow-lg");
+        logo.classList.remove("bg-white");
+        headerContainer.style.transition = "all 0.5s ease";
+            } else {
         if (headerContainer) {
-          headerContainer.classList.remove("bg-white");
-        } else {
+          headerContainer.classList.remove("bg-white", "shadow-lg");
+          logo.classList.add("bg-white");
+          headerContainer.style.transition = "all 0.5s ease";} else {
           alert("hello");
         }
       }

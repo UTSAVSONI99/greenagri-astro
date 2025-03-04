@@ -1,5 +1,5 @@
 ---
-import Button from "./ui/button.astro";
+import { Button } from "./ui/button.tsx";
 import { TbCurrentLocation } from "react-icons/tb";
 import { FiPhone } from "react-icons/fi";
 import { CiMail } from "react-icons/ci";
@@ -7,92 +7,91 @@ import "aos/dist/aos.css";
 ---
 
 <footer class="bg-[#F5F5DC] text-[#4B4B4B]">
+  <div class="p-5"></div>
+  <!-- Newsletter Section -->
+  <div
+    class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 mt-12 flex flex-col md:flex-row justify-between gap-8"
+  >
     <div
-        class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 flex flex-col md:flex-row gap-12 md:gap-24"
+      class="flex-1 text-center md:text-left"
+      data-aos="fade-right"
+      data-aos-delay="200"
     >
-        <!-- First Section: Logo and Description -->
-        <div class="flex-1 text-center md:text-left grow">
-            <a href="#">
-                <img
-                    class="h-16 md:h-20 mx-auto md:mx-0"
-                    src="/green.png"
-                    alt="Green Corp Logo"
-                    data-aos="fade-right"
-                />
-            </a>
-            <p
-                class="mt-4 mx-auto md:mx-0 text-sm md:text-base leading-relaxed max-w-lg"
-                data-aos="fade-right"
-                data-aos-delay="100"
-            >
-                GREEN AGRI PVT. LTD was founded in 1984 with a visionary goal to
-                transform and elevate the diverse facets of the rice industry.
-            </p>
-        </div>
-
-        <!-- Second Section: Contact Info -->
-        <div class="text-center md:text-left" data-aos="fade-left">
-            <h4 class="text-[#2E7D32] text-xl font-semibold mb-6">
-                Contact Us
-            </h4>
-            <ul class="space-y-4">
-                <li class="flex items-center justify-center md:justify-start">
-                    <span class="mr-3 text-[#FFD54F] text-xl">
-                        <TbCurrentLocation />
-                    </span>
-                    Raipur, Chhattisgarh
-                </li>
-                <li class="flex items-center justify-center md:justify-start">
-                    <span class="mr-3 text-[#FFD54F] text-xl"><FiPhone /></span>
-                    +123-456-7890
-                </li>
-                <li class="flex items-center justify-center md:justify-start">
-                    <span class="mr-3 text-[#FFD54F] text-xl"><CiMail /></span>
-                    green@gmail.com
-                </li>
-            </ul>
-        </div>
+      <div class="text-[#2E7D32] text-xl font-semibold">
+        Sign Up for our Newsletter
+      </div>
+      <p class="max-w-xl text-sm mt-4 mx-auto md:mx-0">
+        We will keep you posted with the latest news, events & new developments
+        in paddy growing and processing technologies.
+      </p>
     </div>
 
-    <!-- Newsletter Section -->
+    <!-- Input Section -->
     <div
-        class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 mt-12 flex flex-col md:flex-row justify-between gap-8"
+      class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4"
+      data-aos="fade-left"
+      data-aos-delay="200"
     >
-        <div
-            class="flex-1 text-center md:text-left"
-            data-aos="fade-right"
-            data-aos-delay="200"
-        >
-            <h5 class="text-[#2E7D32] text-xl font-semibold">
-                Sign Up for our Newsletter
-            </h5>
-            <p class="max-w-xl text-sm mt-4 mx-auto md:mx-0">
-                We will keep you posted with the latest news, events & new
-                developments in paddy growing and processing technologies.
-            </p>
-        </div>
+      <input
+        id="email"
+        type="email"
+        placeholder="Your E-mail"
+        class="w-full sm:w-64 border-b-2 border-[#4B4B4B] outline-none focus:border-[#4B4B4B] text-gray-500 text-lg pb-1 bg-transparent appearance-none text-center sm:text-left"
+      />
+      <Button variant={"knowMore"}> Subscribe </Button>
+    </div>
+  </div>
 
-        <!-- Input Section -->
-        <div
-            class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4"
-            data-aos="fade-left"
-            data-aos-delay="200"
-        >
-            <input
-                id="email"
-                type="email"
-                placeholder="Your E-mail"
-                class="w-full sm:w-64 border-b-2 border-[#4B4B4B] outline-none focus:border-[#4B4B4B] text-gray-500 text-lg pb-1 bg-transparent appearance-none text-center sm:text-left"
-            />
-            <Button>Subscribe</Button>
-        </div>
+  <div
+    class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 flex flex-col md:flex-row gap-12 md:gap-24"
+  >
+    <!-- First Section: Logo and Description -->
+    <div class="flex-1 text-center md:text-left grow">
+      <a href="#">
+        <img
+          class="h-16 md:h-20 mx-auto md:mx-0"
+          src="/green.png"
+          alt="Green Corp Logo"
+          data-aos="fade-right"
+        />
+      </a>
+      <p
+        class="mt-4 mx-auto md:mx-0 text-sm md:text-base leading-relaxed max-w-lg"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
+        GREEN AGRI PVT. LTD was founded in 1984 with a visionary goal to
+        transform and elevate the diverse facets of the rice industry.
+      </p>
     </div>
 
-    <!-- Copyright Section -->
-    <div
-        class="border-t max-w-7xl mx-auto mt-8 pt-4 pb-6 text-center text-sm md:text-base"
-        data-aos="fade-up"
-    >
-        &copy; {new Date().getFullYear()} Green Agri Corp Pvt. Ltd. All Rights Reserved.
+    <!-- Second Section: Contact Info -->
+    <div class="text-center md:text-left" data-aos="fade-left">
+      <h4 class="text-[#2E7D32] text-xl font-semibold mb-6">Contact Us</h4>
+      <ul class="space-y-4">
+        <li class="flex items-center justify-center md:justify-start">
+          <span class="mr-3 text-[#FFD54F] text-xl">
+            <TbCurrentLocation />
+          </span>
+          Raipur, Chhattisgarh
+        </li>
+        <li class="flex items-center justify-center md:justify-start">
+          <span class="mr-3 text-[#FFD54F] text-xl"><FiPhone /></span>
+          +123-456-7890
+        </li>
+        <li class="flex items-center justify-center md:justify-start">
+          <span class="mr-3 text-[#FFD54F] text-xl"><CiMail /></span>
+          green@gmail.com
+        </li>
+      </ul>
     </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div
+    class="border-t max-w-7xl mx-auto mt-8 pt-4 pb-6 text-center text-sm md:text-base"
+  >
+    <!-- data-aos="" -->
+    &copy; {new Date().getFullYear()} Green Agri Corp Pvt. Ltd. All Rights Reserved.
+  </div>
 </footer>

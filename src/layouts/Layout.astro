@@ -2,7 +2,8 @@
 interface Props {
   title?: string;
 }
-
+// ** not working well with aos **
+// import { ClientRouter }   from "astro:transitions";
 const { title = "Green Agri Coro" } = Astro.props;
 ---
 
@@ -11,9 +12,13 @@ const { title = "Green Agri Coro" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <!-- <meta name="viewport" content="width=device-width" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- <script src="//unpkg.com/alpinejs" defer></script> -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
@@ -30,25 +35,24 @@ const { title = "Green Agri Coro" } = Astro.props;
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js" is:inline></script>
-    <script is:inline>
-      // @ts-ignore
-      AOS.init({ once: true });
-    </script>
+
+    <!-- <ClientRouter  /> -->
   </head>
-  <body>
+  <body class="overflow-x-hidden w-[100vw]">
     <!-- header -->
     <slot />
     <!-- footer -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <!-- <script src="/aos/aos.js" is:inline></script> -->
     <script>
       // @ts-ignore
-      AOS.init();
+      AOS.init({
+        once: true,
+        duration: 1000,
+      });
     </script>
 
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"
-    ></script>
+    <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js" ></script> -->
   </body>
 </html>
 

@@ -7,4 +7,10 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind()],
+  prefetch: 
+    {
+      defaultStrategy: 'load',
+      prefetchAll: true,
+    
+  }
 });
