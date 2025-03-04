@@ -107,13 +107,13 @@ export function Products() {
           href="/product"
            data-aos="fade-up" data-aos-delay="200"
           >
-      <Button
-      variant={'exploreMore'}
-      >
+         <Button
+         variant={'knowMore'}
+        >
           Explore More
-      </Button> 
+         </Button> 
         </a>
-        </div>
+      </div>
     </div>
   );
 }

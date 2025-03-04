@@ -1,5 +1,5 @@
 ---
-import Button from "./ui/button.astro";
+import { Button } from "./ui/button.tsx";
 import { TbCurrentLocation } from "react-icons/tb";
 import { FiPhone } from "react-icons/fi";
 import { CiMail } from "react-icons/ci";
@@ -38,7 +38,7 @@ import "aos/dist/aos.css";
         placeholder="Your E-mail"
         class="w-full sm:w-64 border-b-2 border-[#4B4B4B] outline-none focus:border-[#4B4B4B] text-gray-500 text-lg pb-1 bg-transparent appearance-none text-center sm:text-left"
       />
-      <Button>Subscribe</Button>
+      <Button variant={"knowMore"}> Subscribe </Button>
     </div>
   </div>
 

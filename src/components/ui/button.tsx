@@ -19,7 +19,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        exploreMore:'px-6 py-3 bg-green-600 text-white rounded-md text-base font-small transition-all hover:bg-green-700'
+        exploreMore:'px-6 py-3 bg-green-600 text-white rounded-md text-base font-small transition-all hover:bg-green-700',
+        knowMore:"poppins md:block text-[#4B4B4B] font-semibold px-4 py-2 rounded-full border border-[#FF8F00] hover:bg-[#8BC34A] hover:text-white transition duration-200 cursor-pointer whitespace-nowrap shadow my-auto"
       },
       size: {
         default: "h-9 px-4 py-2",
